@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@200;550&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Glory', sans-serif;
+    color: #6C6C6C;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* Navbar */
+
+header {
+    border-bottom: #6C6C6C 1px solid;
+}
+
+#logo {
+    height: 60px;
+    margin-left: 25px
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin: 100px 0 25px 0
+}
