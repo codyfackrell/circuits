@@ -1,7 +1,7 @@
 const favTrackSection = document.getElementById('favorite-track');
 const favTrackInput = document.getElementById('fav-track-input');
 const favTrackSubmit = document.getElementById('fav-track-submit');
-const track = document.querySelectorAll('.track-card');
+const tracks = document.getElementsByClassName('track-card');
 const trackPage = document.getElementById('track-page-container');
 
 // Favorite Track Interactivity
@@ -17,16 +17,15 @@ favTrackSubmit.addEventListener('click', favTrack)
 
 
 //Requests 
-track.forEach(card => {
-    card.addEventListener('click', (event) => {
-        let trackId = event.target.id;
-        
-        console.log(event.target.id)
-        
+for(let i = 0; i < tracks.length; i++) {
+    tracks[i].addEventListener('click', function() {
+        let trackId = this.getAttribute('id');
+
+        console.log(trackId)
+
         axios.post('http://localhost:4856/track').then(res => {
             console.log(res.status)
             window.location.replace('./trackPage/track.html') 
-
-        }) 
+        })
     })
-})
+};
