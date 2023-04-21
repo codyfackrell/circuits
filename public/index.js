@@ -23,7 +23,7 @@ for(let i = 0; i < tracks.length; i++) {
 
         console.log(trackId)
 
-        axios.post('http://localhost:4856/track').then(res => {
+        axios.post(`http://localhost:4856/track/${trackId}`).then(res => {
             console.log(res.status)
             window.location.replace('./trackPage/track.html') 
         })

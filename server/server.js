@@ -14,7 +14,7 @@ app.use(cors())
 
 // Endpoints
 app.get('/track', getTrackInfo)
-app.post('/track/', setTrack)
+app.post('/track/:trackId', setTrack)
 
 // Server
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`))
