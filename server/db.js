@@ -20,6 +20,7 @@ const Track = sequelize.define('track', {
         primaryKey: true
     },
     trackName: DataTypes.STRING,
+    trackCode: DataTypes.STRING,
     type: DataTypes.STRING,
     capacity: DataTypes.STRING,
     distance: DataTypes.STRING,
@@ -33,6 +34,7 @@ const Track = sequelize.define('track', {
 
 const trackData = [
     {trackName: 'Daytona International Speedway',
+    trackCode: 'daytona',
     type: 'Tri-Oval',
     capacity: 'Approximately 101,500',
     distance: '2.5 miles (4.0 km)',
@@ -45,6 +47,7 @@ const trackData = [
     },
 
     {trackName: 'Circuit of the Americas',
+    trackCode: 'cota',
     type: 'Road Course',
     capacity: '120,000',
     distance: '3.41 miles (5.5 km )',
@@ -57,6 +60,7 @@ const trackData = [
     },
 
     {trackName: 'Circuit de Monaco',
+    trackCode: 'monaco',
     type: 'Street Circuit',
     capacity: '37,000',
     distance: '2.08 miles (3.34 km)',
@@ -69,6 +73,7 @@ const trackData = [
     },
 
     {trackName: 'Circuit de la Sarthe',
+    trackCode: 'lemans',
     type: 'Road Course',
     capacity: '263,500',
     distance: '8.46 miles (13.626 km)',
@@ -81,6 +86,7 @@ const trackData = [
     },
 
     {trackName: 'Indianapolis Motor Speedway',
+    trackCode: 'indy',
     type: 'Rectangular Oval',
     capacity: '257,325',
     distance: '2.5 miles (4.023 km)',
@@ -93,6 +99,7 @@ const trackData = [
     },
 
     {trackName: 'Silverstone Circuit',
+    trackCode: 'silverstone',
     type: 'Road Course',
     capacity: '150,000',
     distance: '3.66 miles (5.891 km)',
@@ -121,6 +128,11 @@ const Quiz = sequelize.define('quiz', {
 });
 
 const Question = sequelize.define('question', {
+  id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+  },
   quizId: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -128,11 +140,6 @@ const Question = sequelize.define('question', {
       model: Quiz,
       key: 'id'
     }
-  },
-  id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
   },
   question: {
     type: DataTypes.STRING,
