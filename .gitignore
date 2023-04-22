@@ -1,5 +1,3 @@
 node_modules/
-resources
-storage.html
 .env
-trackBackup.html
+backup/

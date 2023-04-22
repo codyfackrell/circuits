@@ -1,5 +1,4 @@
 /* Track Info Page */
-
 .track-title {
     font-size: 30px;
     font-weight: bold;
@@ -10,11 +9,12 @@
 #back-arrow {
     width: 30px;
     margin: 15px 0 0 30px;
+    position: sticky;
+    top: 15px;
 }
 
 
 /* Track Image */
-
 #track-images {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
@@ -32,7 +32,6 @@
 
 
 /* Image Carousel */
-
 #carousel {
     display: grid;
     align-items: center;
@@ -90,7 +89,6 @@
 
 
 /* Track Facts Section */
-
 #facts-container {
     margin: 50px 200px 0 200px;
 }
@@ -114,7 +112,6 @@
 
 
 /* Quiz */
-
 #quiz-container {
     margin: 200px 0px;
     display: flex;
@@ -122,11 +119,12 @@
     align-items: center;
 }
 
-#quiz-intro {
+.quiz-intro {
     font-weight: normal;
+    font-size: 15px;
 }
 
-#quiz-intro, #quiz-question, #quiz-answers {
+#quiz-question, #quiz-answers {
     font-size: 14px; 
 }
 

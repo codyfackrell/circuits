@@ -30,6 +30,10 @@ const Track = sequelize.define('track', {
     random1: DataTypes.TEXT,
     random2: DataTypes.TEXT,
     random3: DataTypes.TEXT,
+    trackImg: DataTypes.TEXT,
+    carousel1: DataTypes.TEXT,
+    carousel2: DataTypes.TEXT,
+    carousel3: DataTypes.TEXT,
 });
 
 const trackData = [
@@ -44,6 +48,10 @@ const trackData = [
     random1: 'The speedway features the largest video screen in motorsports, which measures approximately 60 feet high by 500 feet wide.',
     random2: 'The Daytona 500, the most prestigious race at the speedway, has been run annually since 1959 and is widely considered to be the "Super Bowl" of stock car racing.',
     random3: 'The track has undergone several major renovations and upgrades over the years, including the addition of lights to enable nighttime racing, and the construction of new grandstands and hospitality areas.',
+    trackImg: '../images/daytona/daytona.png',
+    carousel1: '../images/daytona/daytona1.jpg',
+    carousel2: '../images/daytona/daytona2.jpg',
+    carousel3: '../images/daytona/daytona3.jpg'
     },
 
     {trackName: 'Circuit of the Americas',
@@ -57,6 +65,10 @@ const trackData = [
     random1: 'COTA has a 360-degree observation tower that offers stunning views of the track and surrounding areas.',
     random2: 'The track is built on a 1,500-acre site and features a challenging uphill Turn 1.',
     random3: 'COTA has a unique "Bat Bridge" on the track, which is a reference to the millions of bats that reside under a nearby bridge.',
+    trackImg: '../images/cota/cota.png',
+    carousel1: '../images/cota/cota1.jpg',
+    carousel2: '../images/cota/cota2.jpg',
+    carousel3: '../images/cota/cota3.jpg'
     },
 
     {trackName: 'Circuit de Monaco',
@@ -70,6 +82,10 @@ const trackData = [
     random1: 'The circuit is known for its tight corners and narrow roads, making it one of the most challenging tracks in the world.',
     random2: 'The Monaco Grand Prix is one of the oldest and most prestigious races in motorsport, and has been held annually since 1929 (except during World War II).',
     random3: 'The track passes through the streets of Monte Carlo and La Condamine, two of the most famous and luxurious districts in Monaco.',
+    trackImg: '../images/monaco/monaco.png', 
+    carousel1: '../images/monaco/monaco1.jpg',
+    carousel2: '../images/monaco/monaco2.jpg',
+    carousel3: '../images/monaco/monaco3.jpg'
     },
 
     {trackName: 'Circuit de la Sarthe',
@@ -83,6 +99,10 @@ const trackData = [
     random1: 'The 24 Hours of Le Mans is the oldest active sports car endurance race in the world, having been held annually since 1923.',
     random2: 'The Circuit de la Sarthe is a mix of permanent track and public roads, which are closed to the public during the race.',
     random3: 'The famous "Mulsanne Straight" on the track was once more than 3 miles long, but it was shortened in 1990 for safety reasons, and now measures just over a mile in length.',
+    trackImg: '../images/lemans/lemans.png',
+    carousel1: '../images/lemans/lemans1.jpg',
+    carousel2: '../images/lemans/lemans2.jpg',
+    carousel3: '../images/lemans/lemans3.jpg'
     },
 
     {trackName: 'Indianapolis Motor Speedway',
@@ -96,6 +116,10 @@ const trackData = [
     random1: `The original surface of the track was made entirely of bricks, giving it the nickname "The Brickyard." While the track has since been paved with asphalt, a 36-inch strip of bricks remains at the start-finish line as a tribute to the track's history.`,
     random2: 'The Indianapolis 500 is the largest single-day sporting event in the world, with an estimated attendance of over 300,000 people.',
     random3: 'In addition to racing, the Indianapolis Motor Speedway has also been used for a variety of non-motorsport events over the years, including a golf course, balloon races, and music concerts featuring famous performers such as Elvis Presley and the Rolling Stones.',
+    trackImg: '../images/indy/indy.png',
+    carousel1: '../images/indy/indy1.jpg',
+    carousel2: '../images/indy/indy2.jpg',
+    carousel3: '../images/indy/indy3.jpg'
     },
 
     {trackName: 'Silverstone Circuit',
@@ -109,7 +133,11 @@ const trackData = [
     random1: 'The circuit was originally built as a World War II bomber base, and the track itself was created by connecting the perimeter roads of the airfield. The first event held at the track was a car race in 1947, and the British Grand Prix was first held there in 1948.',
     random2: 'The layout of the track has changed numerous times over the years, with the most recent major redesign occurring in 2010. The current layout features a series of fast corners and long straights, making it a popular track for both drivers and spectators.',
     random3: `Silverstone Circuit is home to the British Racing Drivers' Club, an exclusive organization of elite British drivers. Members have included famous names such as Stirling Moss, Jackie Stewart, and Lewis Hamilton.`,
-    },
+    trackImg: '../images/silverstone/silverstone.png',
+    carousel1: '../images/silverstone/silverstone1.jpg',
+    carousel2: '../images/silverstone/silverstone2.jpg',
+    carousel3: '../images/silverstone/silverstone3.jpg'
+    }
 ]; 
 
 

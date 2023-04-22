@@ -2,7 +2,6 @@ const favTrackSection = document.getElementById('favorite-track');
 const favTrackInput = document.getElementById('fav-track-input');
 const favTrackSubmit = document.getElementById('fav-track-submit');
 const tracks = document.getElementsByClassName('track-card');
-const trackPage = document.getElementById('track-page-container');
 
 // Favorite Track Interactivity
 const favTrack = () => {
