@@ -1,11 +1,12 @@
 const trackPage = document.getElementById("track-info-section")
-// const slides = document.querySelectorAll(".slide");
-// const nextBtn = document.querySelector(".btn-next");
-// const prevBtn = document.querySelector(".btn-prev");
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".btn-next");
+const prevBtn = document.querySelector(".btn-prev");
 
+// Retrieving Track Data/Facts
 const retrieveTrack = () => {
   axios
-    .get('/track') //retireve track data from db
+    .get('http://localhost:4856/track')
     .then((res) => {
       trackPage.innerHTML = '';
 
@@ -69,26 +70,27 @@ const retrieveTrack = () => {
 
 retrieveTrack();
 
+
 // Image Carousel
-// let curSlide = 0;
-// let maxSlide = slides.length - 1;
+let curSlide = 0;
+let maxSlide = slides.length - 1;
 
-// slides.forEach((slide, index) => {
-//   slide.style.transform = `translateX(${index * 100}%)`;
-// });
+slides.forEach((slide, index) => {
+  slide.style.transform = `translateX(${index * 100}%)`;
+});
 
-// nextBtn.addEventListener("click", () => {
-//   curSlide === maxSlide ? (curSlide = 0) : curSlide++;
+nextBtn.addEventListener("click", () => {
+  curSlide === maxSlide ? (curSlide = 0) : curSlide++;
 
-//   slides.forEach((slide, index) => {
-//     slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
-//   });
-// });
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
+  });
+});
 
-// prevBtn.addEventListener("click", () => {
-//   curSlide === 0 ? (curSlide = maxSlide) : curSlide--;
+prevBtn.addEventListener("click", () => {
+  curSlide === 0 ? (curSlide = maxSlide) : curSlide--;
 
-//   slides.forEach((slide, index) => {
-//     slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
-//   });
-// });
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
+  });
+});

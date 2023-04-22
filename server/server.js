@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const {getTrackInfo, setTrack} = require('./controller');
+const {setTrack, getTrackInfo} = require('./controller');
 const {SERVER_PORT} = process.env;
 
 const app = express();
@@ -13,8 +13,8 @@ app.use(express.json())
 app.use(cors())
 
 // Endpoints
-app.get('/track', getTrackInfo)
 app.post('/track/:trackId', setTrack)
+app.get('/track', getTrackInfo)
 
 // Server
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`))
