@@ -76,21 +76,19 @@
             <h3 class="quiz-intro">Test your knowledge about <span class="track-title quiz-intro"></span></h3>
 
             <div class="quiz">
-                <p id="quiz-question">Question 1: Where in the world is Daytona?</p>
+                <div id="question-container" class="hide">
+                    <p class="question-header">Question 
+                        <span id="question-number" class="question-header"></span> of 3: 
+                        <span id="quiz-question" class="question-header"></span>
+                    </p>
 
-                <form id="quiz-answers">
-                    <input type="radio" name="answer" id="answer1">
-                        <label for="answer1">Utah</label>
-                    <input type="radio" name="answer" id="answer2">
-                        <label for="answer2">Florida</label>
-                    <input type="radio" name="answer" id="answer3">
-                        <label for="answer3">California</label>
-                    <input type="radio" name="answer" id="answer4">
-                        <label for="answer4">Iowa</label>
-                </form>
+                    <form id="quiz-answers">
+                    </form>
+                </div>
                 
                 <div id="button-container">
-                    <input type="button" value="Submit" id="quiz-btn">
+                    <button class="quiz-btn" id="quiz-start-btn">Start</button>
+                    <button class="quiz-btn hide" id="quiz-next-btn">Next</button>
                 </div>   
             </div>
         </section>

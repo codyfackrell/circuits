@@ -31,4 +31,24 @@ module.exports = {
             console.log(err)
         })
     },
+
+    getQuiz: (req, res) => {
+        sequelize.query(`
+        SELECT questions.question, 
+            json_agg(json_build_object('answer', answers.answer, 'isCorrect', answers."isCorrect"))
+            AS answers
+        FROM quizzes
+        JOIN questions
+        ON quizzes.id = questions."quizId"
+        JOIN answers
+        ON questions.id = answers."questionId"
+        WHERE quizzes.name = '${selectedTrack}'
+        GROUP BY questions.question;`)
+        .then((dbRes) => {
+            res.status(200).send(dbRes[0])
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    },
 }

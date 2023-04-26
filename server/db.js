@@ -8,6 +8,9 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
         ssl: {
             rejectUnauthorized: false
         }
+    },
+    define: {
+      timestamps: false
     }
 });
 
@@ -33,7 +36,7 @@ const Track = sequelize.define('track', {
     trackImg: DataTypes.TEXT,
     carousel1: DataTypes.TEXT,
     carousel2: DataTypes.TEXT,
-    carousel3: DataTypes.TEXT,
+    carousel3: DataTypes.TEXT, 
 });
 
 const trackData = [
