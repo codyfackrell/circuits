@@ -89,7 +89,7 @@
 
 /* Track Facts Section */
 #facts-container {
-    margin: 50px 200px 0 200px;
+    margin: 50px 15% 0 15%;
 }
 
 .facts-title {
@@ -122,7 +122,7 @@
 /* Quiz */
 #quiz-container {
     margin: 200px auto;
-    max-width: 650px;
+    max-width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,11 +131,12 @@
 .quiz-intro {
     font-weight: normal;
     font-size: 15px;
+    text-align: center;
 }
 
 .quiz {
     margin-top: 25px;
-    min-width: 650px; 
+    min-width: 80%; 
 }
 
 .question-status {
@@ -265,12 +266,22 @@
 
     .track-img {
         width: auto;
-        height: auto;
     } 
 
     #carousel {
-        width: auto;
-        height: auto;
-        place-items: center;
+        width: 80%;
     }
+
+    #quiz-answers {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(1, 60%);
+    }
+
+    .answer-btn {
+        height: 30px;
+    }
+
+    .quiz-btn {
+        height: 30px;
+      }
 }
