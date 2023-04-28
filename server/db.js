@@ -24,6 +24,7 @@ const Track = sequelize.define('track', {
     },
     trackName: DataTypes.STRING,
     trackCode: DataTypes.STRING,
+    location: DataTypes.STRING,
     type: DataTypes.STRING,
     capacity: DataTypes.STRING,
     distance: DataTypes.STRING,
@@ -42,6 +43,7 @@ const Track = sequelize.define('track', {
 const trackData = [
     {trackName: 'Daytona International Speedway',
     trackCode: 'daytona',
+    location: 'Daytona Beach, Florida, United States',
     type: 'Tri-Oval',
     capacity: 'Approximately 101,500',
     distance: '2.5 miles (4.0 km)',
@@ -59,6 +61,7 @@ const trackData = [
 
     {trackName: 'Circuit of the Americas',
     trackCode: 'cota',
+    location: 'Austin, Texas, United States',
     type: 'Road Course',
     capacity: '120,000',
     distance: '3.41 miles (5.5 km )',
@@ -76,6 +79,7 @@ const trackData = [
 
     {trackName: 'Circuit de Monaco',
     trackCode: 'monaco',
+    location: 'Monte Carlo, Monaco',
     type: 'Street Circuit',
     capacity: '37,000',
     distance: '2.08 miles (3.34 km)',
@@ -93,6 +97,7 @@ const trackData = [
 
     {trackName: 'Circuit de la Sarthe',
     trackCode: 'lemans',
+    location: 'Le Mans, France',
     type: 'Road Course',
     capacity: '263,500',
     distance: '8.46 miles (13.626 km)',
@@ -110,6 +115,7 @@ const trackData = [
 
     {trackName: 'Indianapolis Motor Speedway',
     trackCode: 'indy',
+    location: 'Indianapolis, Indiana, United States',
     type: 'Rectangular Oval',
     capacity: '257,325',
     distance: '2.5 miles (4.023 km)',
@@ -127,6 +133,7 @@ const trackData = [
 
     {trackName: 'Silverstone Circuit',
     trackCode: 'silverstone',
+    location: 'Silverstone, England, United Kingdom',
     type: 'Road Course',
     capacity: '150,000',
     distance: '3.66 miles (5.891 km)',
@@ -217,9 +224,9 @@ const quizzes = [
         {
           question: 'Which famous NASCAR driver won the Daytona 500 a record 7 times?',
           answers: [
+            { answer: 'Richard Petty', isCorrect: true },
             { answer: 'Dale Earnhardt', isCorrect: false },
             { answer: 'Jeff Gordon', isCorrect: false },
-            { answer: 'Richard Petty', isCorrect: true },
             { answer: 'Jimmie Johnson', isCorrect: false }
           ]
         },
@@ -227,9 +234,9 @@ const quizzes = [
           question: 'The Daytona International Speedway has a 180-acre infield lake, what is the name of this lake?',
             answers: [
               { answer: 'Lake Lewis', isCorrect: false },
-              { answer: 'Lake Lloyd', isCorrect: true },
               { answer: 'Lake Superior', isCorrect: false },
-              { answer: 'Lake Daytona', isCorrect: false }
+              { answer: 'Lake Daytona', isCorrect: false },
+              { answer: 'Lake Lloyd', isCorrect: true }
             ]
           },
       ]
@@ -316,9 +323,9 @@ const quizzes = [
           {
             question: 'Who holds the record for the most overall victories at the 24 Hours of Le Mans?',
             answers: [
+              { answer: 'Tom Kristensen', isCorrect: true },
               { answer: 'Jacky Ickx', isCorrect: false },
               { answer: 'Derek Bell', isCorrect: false },
-              { answer: 'Tom Kristensen', isCorrect: true },
               { answer: 'Emanuele Pirro', isCorrect: false }
             ]
           },

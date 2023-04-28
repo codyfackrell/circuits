@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Glory:wght@200;550&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;600&display=swap');
 
 * {
     margin: 0;
-    font-family: 'Glory', sans-serif;
+    /* font-family: 'Glory', sans-serif; */
+    font-family: 'Blinker', sans-serif;
     color: #6C6C6C;
     box-sizing: border-box;
     text-decoration: none;

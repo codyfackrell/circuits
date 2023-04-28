@@ -12,6 +12,7 @@ const retrieveTrack = () => {
     document.querySelector(".carousel1").src=trackData.carousel1;
     document.querySelector(".carousel2").src=trackData.carousel2;
     document.querySelector(".carousel3").src=trackData.carousel3;
+    document.querySelector(".location").innerHTML = trackData.location;
     document.querySelector(".type").innerHTML = trackData.type;
     document.querySelector(".capacity").innerHTML = trackData.capacity;
     document.querySelector(".distance").innerHTML = trackData.distance;

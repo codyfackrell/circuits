@@ -62,9 +62,8 @@
 
 .btn {
     position: absolute;
-    width: 35px;
-    height: 35px;
-    padding: 5px;
+    width: 25px;
+    height: 25px;
     border: none;
     border-radius: 50%;
     z-index: 10px;
@@ -102,8 +101,17 @@
     display: inline-block;
 }
 
+.fact-description, .fact, #random-facts li {
+    margin-top: 3px;
+}
+
 .fact-description {
     font-weight: bold;
+}
+
+.fact {
+    font-weight: normal;
+    margin-left: 3px
 }
 
 #random-facts {
@@ -113,7 +121,8 @@
 
 /* Quiz */
 #quiz-container {
-    margin: 200px 0px;
+    margin: 200px auto;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,30 +133,46 @@
     font-size: 15px;
 }
 
-.question-header, #quiz-answers {
-    font-size: 14px; 
-}
-
 .quiz {
     margin-top: 25px;
+    min-width: 650px; 
 }
 
-.question-header, #quiz-answers button {
+.question-status {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#quiz-question, #quiz-answers, .question-status {
+    font-size: 14px; 
+    text-align: center;
+}
+
+#quiz-question, #quiz-answers button {
     color: black;
 }
 
 #quiz-answers {
     display: grid;
     place-content: center;
+    max-width: 461px;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 35%);
     gap: 5px;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
 }
 
 .answer-btn {
     background-color: white;
-    border: 1px solid black
+    border: 1px solid black;
+}
+
+#quiz-answers button:hover, #button-container button:hover {
+    cursor: pointer;
+}
+
+#quiz-answers button:active, #button-container button:active {
+    transform: scale(.98, .98);
 }
 
 #quiz-answers button.correct {
@@ -175,6 +200,10 @@
     border: none;
     border-radius: 50px;
     margin-top: 20px;
+  }
+
+  #quiz-start-btn {
+    height: 25px
   }
 
   .hide {

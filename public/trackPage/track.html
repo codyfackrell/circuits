@@ -53,12 +53,13 @@
         <section id="facts-container">
             <div id="track-facts">
                 <h2 class="facts-title">Track Facts:</h2>
-                <p class="fact-description">Race Track Type:</p> <p class="fact type"></p><br>
-                <p class="fact-description">Capacity:</p> <p class="fact capacity"></p><br>
-                <p class="fact-description">Distance:</p> <p class="fact distance"></p><br>
-                <p class="fact-description">Track Surface:</p> <p class="fact surface"></p><br>
-                <p class="fact-description">Top Events:</p> <p class="fact events"></p><br>
-                <p class="fact-description">Opened:</p> <p class="fact opened"></p><br>
+                <p class="fact-description">Track Location: <span class="fact location"></span></p><br>
+                <p class="fact-description">Race Track Type: <span class="fact type"></span></p><br>
+                <p class="fact-description">Capacity: <span class="fact capacity"></span></p><br>
+                <p class="fact-description">Distance: <span class="fact distance"></span></p><br>
+                <p class="fact-description">Track Surface: <span class="fact surface"></span></p><br>
+                <p class="fact-description">Top Events: <span class="fact events"></span></p><br>
+                <p class="fact-description">Opened: <span class="fact opened"></span></p><br>
   
             </div>
             <div id="random-facts">
@@ -77,10 +78,8 @@
 
             <div class="quiz">
                 <div id="question-container" class="hide">
-                    <p class="question-header">Question 
-                        <span id="question-number" class="question-header"></span> of 3: 
-                        <span id="quiz-question" class="question-header"></span>
-                    </p>
+                    <p class="question-status">Question <span id="question-number" class="question-status"></span> of 3:</p>
+                    <p id="quiz-question"></p>
 
                     <form id="quiz-answers">
                     </form>
