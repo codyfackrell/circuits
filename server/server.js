@@ -9,14 +9,15 @@ const app = express();
 
 
 // Middleware
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
+app.use(express.static(`${__dirname}/public`))
+
 
 // Endpoints
 app.post('/track/:trackId', setTrack);
 app.get('/track', getTrackInfo);
 app.get('/trackQuiz', getQuiz);
-// app.post('/trackAnswer')
 
 // Server
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`))

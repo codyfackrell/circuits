@@ -20,10 +20,7 @@ for(let i = 0; i < tracks.length; i++) {
     tracks[i].addEventListener('click', function() {
         let trackId = this.getAttribute('id');
 
-        console.log(trackId)
-
         axios.post(`http://localhost:4856/track/${trackId}`).then(res => {
-            console.log(res.status)
             window.location.replace('./trackPage/track.html') 
         })
     })

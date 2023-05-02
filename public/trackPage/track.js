@@ -70,11 +70,10 @@ const retrieveQuiz = () => {
     const quizNextBtn = document.getElementById("quiz-next-btn");
 
     let questions = res.data;
-    let shuffledQuestions, currentQuestsionIndex;
+    let currentQuestsionIndex;
     
     const startQuiz = () => {
       quizStartBtn.classList.add('hide');
-      // shuffledQuestions = questions.sort(() => Math.random() - .5);
       currentQuestsionIndex = 0;
       questionContainer.classList.remove('hide');
       questionNumber.innerText = currentQuestsionIndex + 1
@@ -109,7 +108,6 @@ const retrieveQuiz = () => {
         const button = document.createElement("button");
         button.innerText = answer.answer;
         button.classList.add("answer-btn");
-        console.log(answer.isCorrect)
         if(answer.isCorrect) {
           button.dataset.correct = answer.isCorrect
         }

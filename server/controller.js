@@ -16,7 +16,6 @@ module.exports = {
     setTrack: (req, res) => {
         const {trackId} = req.params;
         selectedTrack = trackId;
-        console.log(trackId)
         res.sendStatus(200)
     },
 
