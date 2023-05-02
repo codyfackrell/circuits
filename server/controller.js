@@ -6,12 +6,11 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres',
     dialectOptions: {
         ssl: {
-            rejectUnauthorized: false
+            rejectUnauthorized: false,
+            url: CONNECTION_STRING
         }
     }
 });
-
-console.log(CONNECTION_STRING)
 
 let selectedTrack
 
