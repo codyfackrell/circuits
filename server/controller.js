@@ -10,6 +10,8 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 });
 
+console.log(CONNECTION_STRING)
+
 let selectedTrack
 
 module.exports = {
