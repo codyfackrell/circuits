@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Blinker', sans-serif;
+    color: #6C6C6C;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Navbar */
+header {
+    border-bottom: #6C6C6C 1px solid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#logo {
+    height: 60px;
+    margin-left: 25px
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 100px 0 25px 0
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Media query for mobile screens */
+@media (max-width: 725px) {
+    #logo {
+        margin-left: 10px;
+    }
 }

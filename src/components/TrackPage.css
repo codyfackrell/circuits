@@ -1,0 +1,289 @@
+/* Track Info Page */
+.track-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 17px;
+}
+
+#back-arrow {
+  width: 30px;
+  margin: 15px 0 0 30px;
+  position: sticky;
+  top: 15px;
+}
+
+/* Track Image */
+#track-images {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  gap: 65px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.track-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Image Carousel */
+#carousel {
+  display: grid;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.slide {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+.btn:active {
+  transform: scale(1.1);
+}
+
+.btn-prev {
+  top: 45%;
+  left: 2%;
+}
+
+.btn-next {
+  top: 45%;
+  right: 2%;
+}
+
+/* Track Facts Section */
+#facts-container {
+  margin: 50px 15% 0 15%;
+}
+
+.facts-title {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.fact-description,
+.fact {
+  display: inline-block;
+}
+
+.fact-description,
+.fact,
+#random-facts li {
+  margin-top: 3px;
+}
+
+.fact-description {
+  font-weight: bold;
+}
+
+.fact {
+  font-weight: normal;
+  margin-left: 3px;
+}
+
+#random-facts {
+  margin-top: 25px;
+}
+
+/* Quiz */
+#quiz-container {
+  margin: 200px auto;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-intro {
+  font-weight: normal;
+  font-size: 15px;
+  text-align: center;
+}
+
+.quiz {
+  margin-top: 25px;
+  min-width: 80%;
+}
+
+.question-status {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#quiz-question,
+#quiz-answers,
+.question-status {
+  font-size: 14px;
+  text-align: center;
+}
+
+#quiz-question,
+#quiz-answers button {
+  color: black;
+}
+
+#quiz-answers {
+  display: grid;
+  place-content: center;
+  max-width: 461px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 35%);
+  gap: 5px;
+  margin: 20px auto 0 auto;
+}
+
+.answer-btn {
+  background-color: white;
+  border: 1px solid black;
+}
+
+#quiz-answers button:hover,
+#button-container button:hover {
+  cursor: pointer;
+}
+
+#quiz-answers button:active,
+#button-container button:active {
+  transform: scale(0.98, 0.98);
+}
+
+#quiz-answers button.correct {
+  background-color: green;
+  border-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+#quiz-answers button.wrong {
+  color: darkred;
+  font-weight: bold;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-btn {
+  width: 75px;
+  color: white;
+  font-weight: bold;
+  background-color: #d71a21;
+  border: none;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+#quiz-start-btn {
+  height: 25px;
+}
+
+.hide {
+  display: none;
+}
+
+/* Media query for tablet/smaller computer screens */
+@media (max-width: 1170px) {
+  #track-images {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: 50px;
+  }
+
+  .track-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .track-img {
+    width: 466px;
+  }
+
+  #carousel {
+    width: 466px;
+    place-items: center;
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 725px) {
+  #back-arrow {
+    display: none;
+  }
+
+  .track-title {
+    margin-top: 65px;
+    word-wrap: break-word;
+  }
+
+  #track-images {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: 50px;
+  }
+
+  .track-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .track-img {
+    width: auto;
+  }
+
+  #carousel {
+    width: 80%;
+  }
+
+  #quiz-answers {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 60%);
+  }
+
+  .answer-btn {
+    height: 30px;
+  }
+
+  .quiz-btn {
+    height: 30px;
+  }
+}
