@@ -38,7 +38,7 @@
 
 /* Favorite Track Input Section */
 
-#favorite-track {
+.favorite-track {
   margin: 225px auto;
   max-width: 80%;
   text-align: center;
@@ -47,19 +47,19 @@
   align-items: center;
 }
 
-#search-container {
+.search-container {
   display: flex;
   flex-direction: row;
   margin-top: 15px;
 }
 
-#fav-track-input {
+.fav-track-input {
   width: 300px;
   margin-right: 5px;
   padding-left: 15px;
 }
 
-#fav-track-submit {
+.fav-track-submit {
   width: 75px;
   background-color: #d71a21;
   color: black;
@@ -85,13 +85,13 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  #search-container {
+  .search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #fav-track-submit {
+  .fav-track-submit {
     margin-top: 8px;
   }
 }

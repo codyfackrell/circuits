@@ -6,7 +6,7 @@ const TrackPage = () => {
     <>
       <a href="/">
         <svg
-          id="back-arrow"
+          className="back-arrow"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
@@ -17,99 +17,99 @@ const TrackPage = () => {
         </svg>
       </a>
 
-      <h1 class="track-title"></h1>
+      <h1 classNameName="track-title"></h1>
 
       {/* Track Images Section */}
-      <section id="track-images">
-        <div class="track-img-wrapper">
-          <img src="" class="track-img" />
+      <section className="track-images">
+        <div className="track-img-wrapper">
+          <img src="" className="track-img" />
         </div>
 
-        <div class="track-img-wrapper">
-          <section id="carousel">
-            <section class="slider">
-              <div class="slide">
-                <img src="" class="carousel-img carousel1" />
+        <div className="track-img-wrapper">
+          <section className="carousel">
+            <section className="slider">
+              <div className="slide">
+                <img src="" className="carousel-img carousel1" />
               </div>
-              <div class="slide">
-                <img src="" class="carousel-img carousel2" />
+              <div className="slide">
+                <img src="" className="carousel-img carousel2" />
               </div>
-              <div class="slide">
-                <img src="" class="carousel-img carousel3" />
+              <div className="slide">
+                <img src="" className="carousel-img carousel3" />
               </div>
 
-              <button class="btn btn-next"> GREATER THAN </button>
-              <button class="btn btn-prev"> LESS THAN </button>
+              <button className="btn btn-next"> GREATER THAN </button>
+              <button className="btn btn-prev"> LESS THAN </button>
             </section>
           </section>
         </div>
       </section>
 
       {/* Track Facts Section */}
-      <div id="facts-container">
-        <div id="track-facts">
-          <h2 class="facts-title">Track Facts:</h2>
-          <p class="fact-description">
-            Track Location: <span class="fact location"></span>
+      <div className="facts-container">
+        <div className="track-facts">
+          <h2 className="facts-title">Track Facts:</h2>
+          <p className="fact-description">
+            Track Location: <span className="fact location"></span>
           </p>
           <br />
-          <p class="fact-description">
-            Race Track Type: <span class="fact type"></span>
+          <p className="fact-description">
+            Race Track Type: <span className="fact type"></span>
           </p>
           <br />
-          <p class="fact-description">
-            Capacity: <span class="fact capacity"></span>
+          <p className="fact-description">
+            Capacity: <span className="fact capacity"></span>
           </p>
           <br />
-          <p class="fact-description">
-            Distance: <span class="fact distance"></span>
+          <p className="fact-description">
+            Distance: <span className="fact distance"></span>
           </p>
           <br />
-          <p class="fact-description">
-            Track Surface: <span class="fact surface"></span>
+          <p className="fact-description">
+            Track Surface: <span className="fact surface"></span>
           </p>
           <br />
-          <p class="fact-description">
-            Top Events: <span class="fact events"></span>
+          <p className="fact-description">
+            Top Events: <span className="fact events"></span>
           </p>
           <br />
-          <p class="fact-description">
-            Opened: <span class="fact opened"></span>
+          <p className="fact-description">
+            Opened: <span className="fact opened"></span>
           </p>
           <br />
         </div>
-        <div id="random-facts">
-          <h2 class="facts-title">Random Facts:</h2>
+        <div className="random-facts">
+          <h2 className="facts-title">Random Facts:</h2>
           <ul>
-            <li id="random1"></li>
-            <li id="random2"></li>
-            <li id="random3"></li>
+            <li className="random1"></li>
+            <li className="random2"></li>
+            <li className="random3"></li>
           </ul>
         </div>
       </div>
 
       {/* Quiz Starts Here */}
-      <section id="quiz-container">
-        <h3 class="quiz-intro">
-          Test your knowledge about <span class="track-title quiz-intro"></span>
+      <section className="quiz-container">
+        <h3 className="quiz-intro">
+          Test your knowledge about <span className="track-title quiz-intro"></span>
         </h3>
 
-        <div class="quiz">
-          <div id="question-container" class="hide">
-            <p class="question-status">
+        <div className="quiz">
+          <div className="question-container hide">
+            <p className="question-status">
               Question{" "}
-              <span id="question-number" class="question-status"></span> of 3:
+              <span className="question-number question-status"></span> of 3:
             </p>
-            <p id="quiz-question"></p>
+            <p className="quiz-question"></p>
 
-            <form id="quiz-answers"></form>
+            <form className="quiz-answers"></form>
           </div>
 
-          <div id="button-container">
-            <button class="quiz-btn" id="quiz-start-btn">
+          <div className="button-container">
+            <button className="quiz-btn quiz-start-btn">
               Start
             </button>
-            <button class="quiz-btn hide" id="quiz-next-btn">
+            <button className="quiz-btn quiz-next-btn hide">
               Next
             </button>
           </div>
