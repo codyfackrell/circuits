@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header'
-import Home from './components/Home';
-import TrackPage from './components/TrackPage';
+import Home from './components/HomePage/Home';
+import TrackPage from './components/TrackPage/TrackPage';
 import './App.css';
 
 function App() {
