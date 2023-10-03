@@ -12,19 +12,21 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 });
 
-let selectedTrack
+
 
 module.exports = {
-    setTrack: (req, res) => {
-        const {trackId} = req.params;
-        selectedTrack = trackId;
-        res.sendStatus(200)
-    },
+    // setTrack: (req, res) => {
+    //     const {trackId} = req.params;
+    //     selectedTrack = trackId;
+    //     res.sendStatus(200)
+    // },
 
     getTrackInfo: (req, res) => {
+        let trackId = req.params.trackId;
+
         sequelize.query(`
         SELECT * FROM tracks
-        WHERE "trackCode" = '${selectedTrack}'`)
+        WHERE "trackCode" = '${trackId}'`)
         .then((dbRes) => {
             res.status(200).send(dbRes[0][0])
         })
@@ -34,6 +36,10 @@ module.exports = {
     },
 
     getQuiz: (req, res) => {
+        let trackId = req.params.trackId;
+
+        console.log(trackId)
+
         sequelize.query(`
         SELECT questions.question, 
             json_agg(json_build_object('answer', answers.answer, 'isCorrect', answers."isCorrect"))
@@ -43,7 +49,7 @@ module.exports = {
         ON quizzes.id = questions."quizId"
         JOIN answers
         ON questions.id = answers."questionId"
-        WHERE quizzes.name = '${selectedTrack}'
+        WHERE quizzes.name = '${trackId}'
         GROUP BY questions.question;`)
         .then((dbRes) => {
             res.status(200).send(dbRes[0])

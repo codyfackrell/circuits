@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./TrackPage.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import Quiz from "./Quiz";
 
 const TrackPage = () => {
+  const { trackId } = useParams();
+  const [trackData, setTrackData] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      const getTrackData = await axios.get(
+        `http://localhost:4000/trackpage/${trackId}`
+      );
+      setTrackData(getTrackData.data);
+    })();
+  }, []);
+
   return (
     <>
       <a href="/">
@@ -17,7 +32,7 @@ const TrackPage = () => {
         </svg>
       </a>
 
-      <h1 classNameName="track-title"></h1>
+      <h1 className="track-title">{trackData.trackName}</h1>
 
       {/* Track Images Section */}
       <section className="track-images">
@@ -38,8 +53,8 @@ const TrackPage = () => {
                 <img src="" className="carousel-img carousel3" />
               </div>
 
-              <button className="btn btn-next"> GREATER THAN </button>
-              <button className="btn btn-prev"> LESS THAN </button>
+              <button className="btn btn-next"> {">"} </button>
+              <button className="btn btn-prev"> {"<"} </button>
             </section>
           </section>
         </div>
@@ -50,71 +65,49 @@ const TrackPage = () => {
         <div className="track-facts">
           <h2 className="facts-title">Track Facts:</h2>
           <p className="fact-description">
-            Track Location: <span className="fact location"></span>
+            Track Location:{" "}
+            <span className="fact location">{trackData.location}</span>
           </p>
           <br />
           <p className="fact-description">
-            Race Track Type: <span className="fact type"></span>
+            Race Track Type: <span className="fact type">{trackData.type}</span>
           </p>
           <br />
           <p className="fact-description">
-            Capacity: <span className="fact capacity"></span>
+            Capacity:{" "}
+            <span className="fact capacity">{trackData.capacity}</span>
           </p>
           <br />
           <p className="fact-description">
-            Distance: <span className="fact distance"></span>
+            Distance:{" "}
+            <span className="fact distance">{trackData.distance}</span>
           </p>
           <br />
           <p className="fact-description">
-            Track Surface: <span className="fact surface"></span>
+            Track Surface:{" "}
+            <span className="fact surface">{trackData.surface}</span>
           </p>
           <br />
           <p className="fact-description">
-            Top Events: <span className="fact events"></span>
+            Top Events: <span className="fact events">{trackData.events}</span>
           </p>
           <br />
           <p className="fact-description">
-            Opened: <span className="fact opened"></span>
+            Opened: <span className="fact opened">{trackData.opened}</span>
           </p>
           <br />
         </div>
         <div className="random-facts">
           <h2 className="facts-title">Random Facts:</h2>
           <ul>
-            <li className="random1"></li>
-            <li className="random2"></li>
-            <li className="random3"></li>
+            <li className="random1">{trackData.random1}</li>
+            <li className="random2">{trackData.random2}</li>
+            <li className="random3">{trackData.random3}</li>
           </ul>
         </div>
       </div>
 
-      {/* Quiz Starts Here */}
-      <section className="quiz-container">
-        <h3 className="quiz-intro">
-          Test your knowledge about <span className="track-title quiz-intro"></span>
-        </h3>
-
-        <div className="quiz">
-          <div className="question-container hide">
-            <p className="question-status">
-              Question{" "}
-              <span className="question-number question-status"></span> of 3:
-            </p>
-            <p className="quiz-question"></p>
-
-            <form className="quiz-answers"></form>
-          </div>
-
-          <div className="button-container">
-            <button className="quiz-btn quiz-start-btn">
-              Start
-            </button>
-            <button className="quiz-btn quiz-next-btn hide">
-              Next
-            </button>
-          </div>
-        </div>
-      </section>
+      <Quiz trackId={trackId} trackName={trackData.trackName} />
 
       <footer>
         <p>codyfackrell, 2023</p>

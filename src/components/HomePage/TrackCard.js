@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const TrackCard = ({track, trackImg, trackName, trackLocation}) => {
+  const navigate = useNavigate()
 
-  const handleCardClick = (clickedTrack) => {
-    console.log(clickedTrack)
+  const handleCardClick = (trackId) => {
+      navigate(`/trackpage/${trackId}`)
   }
 
   return (

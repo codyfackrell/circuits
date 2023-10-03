@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import "./Home.css";
 import TrackCard from "./TrackCard";
-import daytonaImg from "../../assets/daytona/daytona.png";
-import cotaImg from "../../assets/cota/cota.png";
-import monacoImg from "../../assets/monaco/monaco.png";
-import lemansImg from "../../assets/lemans/lemans.png";
-import indyImg from "../../assets/indy/indy.png";
-import silverstoneImg from "../../assets/silverstone/silverstone.png";
+import { tracks } from "../../assets/trackCardData";
 
 const Home = () => {
+  // Favorite Track State
   const [favTrack, setFavTrack] = useState("");
   const [messageDisplayed, setMessageDisplayed] = useState(false);
   const [message, setMessage] = useState("");
 
+  // Favorite Track Handler
   const handleFavTrack = (e) => {
     e.preventDefault();
 
     if (!favTrack) {
       alert("Please type in a track name!");
-
     } else {
       const messageArray = [
         `Everyone should visit ${favTrack}!`,
@@ -39,42 +35,15 @@ const Home = () => {
       <h1 className="page-title">Circuits of the World</h1>
 
       <section className="race-tracks">
-        <TrackCard
-          track="daytona"
-          trackImg={daytonaImg}
-          trackName="Daytona International Speedway"
-          trackLocation="Daytona Beach, Florida, United States"
-        />
-        <TrackCard
-          track="cota"
-          trackImg={cotaImg}
-          trackName="Circuit of the Americas"
-          trackLocation="Austin, Texas, United States"
-        />
-        <TrackCard
-          track="monaco"
-          trackImg={monacoImg}
-          trackName="Circuit de Monaco"
-          trackLocation="Monte Carlo, Monaco"
-        />
-        <TrackCard
-          track="lemans"
-          trackImg={lemansImg}
-          trackName="Circuit de la Sarthe"
-          trackLocation="Le Mans, France"
-        />
-        <TrackCard
-          track="indy"
-          trackImg={indyImg}
-          trackName="Indianapolis Motor Speedway"
-          trackLocation="Indianapolis, Indiana, United States"
-        />
-        <TrackCard
-          track="silverstone"
-          trackImg={silverstoneImg}
-          trackName="Silverstone Circuit"
-          trackLocation="Silverstone, England, United Kingdom"
-        />
+        {tracks.map((track) => (
+          <TrackCard
+            key={track.id}
+            track={track.id}
+            trackImg={track.img}
+            trackName={track.name}
+            trackLocation={track.location}
+            />
+        ))}
       </section>
 
       <div className="favorite-track">
