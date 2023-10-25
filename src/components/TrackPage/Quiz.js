@@ -4,6 +4,8 @@ import "./TrackPage.css";
 
 const Quiz = ({ trackId, trackName }) => {
   const [quizData, setQuizData] = useState({});
+  const [currentQuestion, setCurrentQuestion] = useState({});
+  const [rightAnswer, setRightAnswer] = useState("");
   const [quizActive, setQuizActive] = useState(false);
   const [questionNumber, setQuestionNumber] = useState(1);
 
@@ -14,17 +16,29 @@ const Quiz = ({ trackId, trackName }) => {
       );
       const data = getQuizData.data;
       setQuizData(data);
+      setCurrentQuestion(data[0]);
+      setRightAnswer(null);
     })();
   }, []);
 
   const onNext = () => {
+    setRightAnswer(null);
     if (questionNumber < 3) {
       setQuestionNumber(questionNumber + 1);
+      setCurrentQuestion(quizData[questionNumber]);
     } else {
       setQuestionNumber(1);
+      setCurrentQuestion(quizData[0]);
       setQuizActive(false);
     }
-    setQuizData(quizData[questionNumber]);
+  };
+
+  const handleAnswerClick = (answer) => {
+    const find = currentQuestion.answers.find(
+      (answerObj) => answerObj.isCorrect
+    );
+    const retrieveAnswer = find.answer;
+    answer === retrieveAnswer ? setRightAnswer(true) : setRightAnswer(false);
   };
 
   return (
@@ -55,26 +69,24 @@ const Quiz = ({ trackId, trackName }) => {
                 </span>
                 of 3:
               </p>
-              {/* DISPLAY ONE QUESTION */}
-              <p className="quiz-question">{quizData.question}</p>
-              <form className="quiz-answers">
-                {quizData.answers.map((answerObj) => (
-                  <button className="answer-btn">{answerObj.answer}</button>
+              <p className="quiz-question">{currentQuestion.question}</p>
+              <div className="quiz-answers">
+                {currentQuestion.answers.map((answerObj, index) => (
+                  <button
+                    className={`answer-btn ${
+                      rightAnswer !== null && answerObj.isCorrect
+                        ? "correct"
+                        : rightAnswer !== null && !answerObj.isCorrect
+                        ? "wrong"
+                        : ""
+                    }`}
+                    onClick={() => handleAnswerClick(answerObj.answer)}
+                    key={index}
+                  >
+                    {answerObj.answer}
+                  </button>
                 ))}
-              </form>
-              {/* DISPLAY ALL QUESTIONS AT ONCE */}
-              {/* {quizData.map((questionObj) => (
-                <>
-                  <p className="quiz-question">{questionObj.question}</p>
-                  <form className="quiz-answers">
-                    {questionObj.answers.map((answerObj) => (
-                      <button className="answer-btn">{answerObj.answer}</button>
-                    ))}
-                  </form>
-                </>
-              ))} */}
-
-
+              </div>
             </div>
             <div className="button-container">
               <button className="quiz-btn quiz-next-btn" onClick={onNext}>
