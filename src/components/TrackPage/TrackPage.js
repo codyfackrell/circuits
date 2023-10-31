@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { tracks } from "../../assets/trackCardData";
+import Carousel from "./Carousel";
 import "./TrackPage.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -7,6 +9,16 @@ import Quiz from "./Quiz";
 const TrackPage = () => {
   const { trackId } = useParams();
   const [trackData, setTrackData] = useState({});
+  const [trackImg, setTrackImg] = useState()
+  const [carouselImgs, setCarouselImgs] = useState([])
+
+  const findImages = (id) => {
+    const imageData = tracks.find((track) => track.id === id);
+    setTrackImg(imageData.img)
+    setCarouselImgs(imageData.carouselImgs)
+  }
+
+  console.log(carouselImgs)
 
   useEffect(() => {
     (async () => {
@@ -15,6 +27,7 @@ const TrackPage = () => {
       );
       setTrackData(getTrackData.data);
     })();
+    findImages(trackId)
   }, []);
 
   return (
@@ -25,9 +38,7 @@ const TrackPage = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
-          {/* ! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com
-          License - https://fontawesome.com/license (Commercial License)
-          Copyright 2023 Fonticons, Inc. */}
+          {/* ! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
           <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128z" />
         </svg>
       </a>
@@ -37,27 +48,10 @@ const TrackPage = () => {
       {/* Track Images Section */}
       <section className="track-images">
         <div className="track-img-wrapper">
-          <img src="" className="track-img" />
+          <img src={trackImg} className="track-img" />
         </div>
 
-        <div className="track-img-wrapper">
-          <section className="carousel">
-            <section className="slider">
-              <div className="slide">
-                <img src="" className="carousel-img carousel1" />
-              </div>
-              <div className="slide">
-                <img src="" className="carousel-img carousel2" />
-              </div>
-              <div className="slide">
-                <img src="" className="carousel-img carousel3" />
-              </div>
-
-              <button className="btn btn-next"> {">"} </button>
-              <button className="btn btn-prev"> {"<"} </button>
-            </section>
-          </section>
-        </div>
+        <Carousel carouselImgs={carouselImgs}/>
       </section>
 
       {/* Track Facts Section */}

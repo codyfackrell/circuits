@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(`../${__dirname}/public`))
 
-
 // Endpoints
 // app.post('/track/:trackId', setTrack);
 app.get('/trackpage/:trackId', getTrackInfo);
