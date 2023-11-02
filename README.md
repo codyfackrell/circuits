@@ -21,6 +21,8 @@ Tech Stack:
 ![homepage](./src/assets/screenshots/circuits-main-page1.png) 
 <br>
 ![homepage](./src/assets/screenshots/circuits-main-page2.png) 
+<br>
+![homepage](./src/assets/screenshots/circuits-main-page3.png) 
 
 <br>
 
@@ -28,3 +30,8 @@ Tech Stack:
 ![trackpage](./src/assets/screenshots/circuits-track-page1.png)
 <br>
 ![trackpage](./src/assets/screenshots/circuits-track-page2.png)
+
+***Quiz on Track Page:***
+![quiz](./src/assets/screenshots/circuits-quiz1.png)
+<br>
+![quiz](./src/assets/screenshots/circuits-quiz2.png)
