@@ -18,17 +18,16 @@ const TrackPage = () => {
     setCarouselImgs(imageData.carouselImgs)
   }
 
-  console.log(carouselImgs)
-
   useEffect(() => {
     (async () => {
       const getTrackData = await axios.get(
         `http://localhost:4000/trackpage/${trackId}`
       );
       setTrackData(getTrackData.data);
+      document.title = `Circuits: ${getTrackData.data.trackName}`
     })();
     findImages(trackId)
-  }, []);
+  }, [trackId]);
 
   return (
     <>
@@ -48,10 +47,10 @@ const TrackPage = () => {
       {/* Track Images Section */}
       <section className="track-images">
         <div className="track-img-wrapper">
-          <img src={trackImg} className="track-img" />
+          <img src={trackImg} alt={`track for ${trackData.trackName}`} className="track-img" />
         </div>
 
-        <Carousel carouselImgs={carouselImgs}/>
+        <Carousel carouselImgs={carouselImgs} trackId={trackId}/>
       </section>
 
       {/* Track Facts Section */}

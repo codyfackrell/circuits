@@ -1,38 +1,31 @@
 import React, { useState } from "react";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
-const Carousel = ({carouselImgs}) => {
-  const [currentImage, setCurrentImage] = useState(0);
+import "./Carousel.css";
 
-  console.log(carouselImgs)
+const Carousel = ({ carouselImgs, trackId }) => {
+  const [slide, setSlide] = useState(0);
 
-  const nextImage = () => {
-    setCurrentImage((currentImage + 1) % 3);
+  const nextSlide = () => {
+    setSlide(slide === carouselImgs.length - 1 ? 0 : slide + 1)
   };
 
-  const prevImage = () => {
-    setCurrentImage((currentImage - 1) % 3);
+  const prevSlide = () => {
+    setSlide(slide === 0 ? carouselImgs.length - 1 : slide - 1)
   };
 
   return (
-    <div className="track-img-wrapper">
-      <section className="carousel">
-        <section className="slider">
-          {carouselImgs.map((img, index) => (
-            <div key={index} className="slide">
-                <img src={img} className="carousel-img carousel2" />
-            </div>
-          ))}
-
-          <button className="btn btn-next" onClick={nextImage}>
-            {" "}
-            {">"}{" "}
-          </button>
-          <button className="btn btn-prev" onClick={prevImage}>
-            {" "}
-            {"<"}{" "}
-          </button>
-        </section>
-      </section>
+    <div className="carousel">
+      <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide}/>
+      {carouselImgs.map((img, index) => (
+        <img src={img} key={index} alt={`${trackId} ${index}`} className={slide === index ? "slide" : "slide slide-hidden"} />
+      ))}
+      <BsArrowRightCircleFill className="arrow arrow-right" onClick={nextSlide}/>
+      <span className="indicators">
+        {carouselImgs.map((_, index) => (
+          <button key={index} onClick={() => setSlide(index)} className={slide === index ? "indicator" : "indicator indicator-inactive"}></button>
+        ))}
+      </span>
     </div>
   );
 };

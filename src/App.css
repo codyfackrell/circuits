@@ -3,11 +3,13 @@
 * {
     margin: 0;
     font-family: 'Blinker', sans-serif;
-    color: #6C6C6C;
     box-sizing: border-box;
     text-decoration: none;
 }
 
+body {
+    color: #6C6C6C;
+}
 
 /* Navbar */
 header {
