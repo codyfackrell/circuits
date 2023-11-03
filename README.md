@@ -37,3 +37,10 @@ Tech Stack:
 ![quiz](./src/assets/screenshots/circuits-quiz1.png)
 <br>
 ![quiz](./src/assets/screenshots/circuits-quiz2.png)
+
+<br>
+
+***Mobile View***
+![mobile](./src/assets/screenshots/circuits-mobile.png)
+
+
