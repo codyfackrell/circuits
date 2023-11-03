@@ -41,6 +41,6 @@ Tech Stack:
 <br>
 
 ***Mobile View***
-![mobile](./src/assets/screenshots/circuits-mobile.png)
+![mobile](./src/assets/screenshots/circuits-mobile1.png)
 
 
