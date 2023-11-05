@@ -21,7 +21,7 @@ const TrackPage = () => {
   useEffect(() => {
     (async () => {
       const getTrackData = await axios.get(
-        `https://db.eqduxbbhxqyrdgkaieul.supabase.co/trackpage/${trackId}`
+        `https://eqduxbbhxqyrdgkaieul.supabase.co/trackpage/${trackId}`
         // `http://localhost:4000/trackpage/${trackId}`
       );
       setTrackData(getTrackData.data);
