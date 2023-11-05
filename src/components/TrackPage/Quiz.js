@@ -12,7 +12,8 @@ const Quiz = ({ trackId, trackName }) => {
   useEffect(() => {
     (async () => {
       const getQuizData = await axios.get(
-        `http://localhost:4000/trackQuiz/${trackId}`
+        `http://db.eqduxbbhxqyrdgkaieul.supabase.co/trackQuiz/${trackId}`
+        // `http://localhost:4000/trackQuiz/${trackId}`
       );
       const data = getQuizData.data;
       setQuizData(data);

@@ -21,13 +21,16 @@ const TrackPage = () => {
   useEffect(() => {
     (async () => {
       const getTrackData = await axios.get(
-        `http://localhost:4000/trackpage/${trackId}`
+        `http://db.eqduxbbhxqyrdgkaieul.supabase.co/trackpage/${trackId}`
+        // `http://localhost:4000/trackpage/${trackId}`
       );
       setTrackData(getTrackData.data);
       document.title = `Circuits: ${getTrackData.data.trackName}`
     })();
     findImages(trackId)
   }, [trackId]);
+
+console.log(trackData)
 
   return (
     <>
