@@ -11,8 +11,14 @@ const Quiz = ({ trackId, trackName }) => {
 
   useEffect(() => {
     (async () => {
+      const supabaseApiKey = process.env.API_KEY
       const getQuizData = await axios.get(
-        `https://eqduxbbhxqyrdgkaieul.supabase.co/trackQuiz/${trackId}`
+        `https://eqduxbbhxqyrdgkaieul.supabase.co/trackQuiz/${trackId}`, 
+        {
+          headers: {
+            'apikey': supabaseApiKey
+          }
+        }
         // `http://localhost:4000/trackQuiz/${trackId}`
       );
       const data = getQuizData.data;
