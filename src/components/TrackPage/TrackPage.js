@@ -20,15 +20,8 @@ const TrackPage = () => {
 
   useEffect(() => {
     (async () => {
-      const supabaseApiKey = process.env.API_KEY
       const getTrackData = await axios.get(
-        `https://eqduxbbhxqyrdgkaieul.supabase.co/trackpage/${trackId}`,
-        {
-          headers: {
-            'apikey': supabaseApiKey
-          }
-        }
-        // `http://localhost:4000/trackpage/${trackId}`
+        `http://localhost:4000/trackpage/${trackId}`
       );
       setTrackData(getTrackData.data);
       document.title = `Circuits: ${getTrackData.data.trackName}`
