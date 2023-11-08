@@ -19,6 +19,7 @@ const Quiz = ({ trackId, trackName }) => {
             'apikey': supabaseApiKey
           }
         }
+       
         // `http://localhost:4000/trackQuiz/${trackId}`
       );
       const data = getQuizData.data;

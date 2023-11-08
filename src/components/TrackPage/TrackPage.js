@@ -20,8 +20,14 @@ const TrackPage = () => {
 
   useEffect(() => {
     (async () => {
+      const supabaseApiKey = process.env.API_KEY
       const getTrackData = await axios.get(
-        `https://eqduxbbhxqyrdgkaieul.supabase.co/trackpage/${trackId}`
+        `https://eqduxbbhxqyrdgkaieul.supabase.co/trackpage/${trackId}`,
+        {
+          headers: {
+            'apikey': supabaseApiKey
+          }
+        }
         // `http://localhost:4000/trackpage/${trackId}`
       );
       setTrackData(getTrackData.data);
